@@ -13,6 +13,7 @@ public class BoardUtils {
   public static final boolean[] SEVENTH_ROW = null;
 
   private BoardUtils() {
+
     throw new RuntimeException("You cannot instantiate a BoardUtils Object");
   }
 

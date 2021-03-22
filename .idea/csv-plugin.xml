@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/project_files/src/com/chess/engine/pieces/Bishop.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/project_files/src/com/chess/engine/pieces/Pawn.java">
           <value>
             <Attribute>

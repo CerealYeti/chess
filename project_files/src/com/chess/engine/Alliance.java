@@ -16,7 +16,8 @@ public enum Alliance {
     public boolean isWhite() {
       return true;
     }
-  }, BLACK {
+  },
+  BLACK {
     @Override
     public int getDirection() {
       return 1;
@@ -36,5 +37,6 @@ public enum Alliance {
   public abstract int getDirection();
 
   public abstract boolean isBlack();
+
   public abstract boolean isWhite();
 }

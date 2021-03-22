@@ -8,25 +8,26 @@ import com.chess.engine.board.Move.AttackMove;
 import com.chess.engine.board.Move.MajorMove;
 import com.chess.engine.board.Tile;
 import com.google.common.collect.ImmutableList;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 public class Rook extends Piece {
 
-  private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-8, -1, 1, 8};
+  private static final int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-8, -1, 1, 8};
 
   Rook(final int piecePosition, final Alliance pieceAlliance) {
     super(piecePosition, pieceAlliance);
   }
 
-  private static boolean isFirstColumnExclusion(final int currentPosition,
-      final int candidateOffset) {
+  private static boolean isFirstColumnExclusion(
+      final int currentPosition, final int candidateOffset) {
     return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -1);
   }
 
-  private static boolean isEighthColumnExclusion(final int currentPosition,
-      final int candidateOffset) {
+  private static boolean isEighthColumnExclusion(
+      final int currentPosition, final int candidateOffset) {
     return BoardUtils.EIGHTH_COLUMN[currentPosition] && (candidateOffset == 1);
   }
 
@@ -75,4 +76,3 @@ public class Rook extends Piece {
     return ImmutableList.copyOf(legalMoves);
   }
 }
-

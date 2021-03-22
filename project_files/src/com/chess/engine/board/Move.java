@@ -19,18 +19,19 @@ public abstract class Move {
     public MajorMove(final Board board, final Piece movedPiece, final int destinationCoordinate) {
       super(board, movedPiece, destinationCoordinate);
     }
-
   }
 
   public static final class AttackMove extends Move {
 
     final Piece attackedPiece;
 
-    public AttackMove(final Board board, final Piece movedPiece, final int destinationCoordinate,
+    public AttackMove(
+        final Board board,
+        final Piece movedPiece,
+        final int destinationCoordinate,
         final Piece attackedPiece) {
       super(board, movedPiece, destinationCoordinate);
       this.attackedPiece = attackedPiece;
     }
-
   }
 }

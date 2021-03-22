@@ -8,6 +8,7 @@ import com.chess.engine.board.Move.AttackMove;
 import com.chess.engine.board.Move.MajorMove;
 import com.chess.engine.board.Tile;
 import com.google.common.collect.ImmutableList;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -21,13 +22,13 @@ public class Queen extends Piece {
   }
 
   private boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset) {
-    return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -9
-        || candidateOffset == -1 || candidateOffset == 7);
+    return BoardUtils.FIRST_COLUMN[currentPosition]
+        && (candidateOffset == -9 || candidateOffset == -1 || candidateOffset == 7);
   }
 
   private boolean isEighthColumnExclusion(final int currentPosition, final int candidateOffset) {
-    return BoardUtils.EIGHTH_COLUMN[currentPosition] && (candidateOffset == -7
-        || candidateOffset == 1 || candidateOffset == 9);
+    return BoardUtils.EIGHTH_COLUMN[currentPosition]
+        && (candidateOffset == -7 || candidateOffset == 1 || candidateOffset == 9);
   }
 
   @Override
@@ -73,6 +74,4 @@ public class Queen extends Piece {
     }
     return ImmutableList.copyOf(legalMoves);
   }
-
-
 }
