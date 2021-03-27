@@ -17,7 +17,7 @@ public class Knight extends Piece {
 
   private static final int[] CANDIDATE_MOVE_COORDINATES = {-17, -15, -10, -6, 6, 10, 15, 17};
 
-  Knight(final int piecePosition, final Alliance pieceAlliance) {
+  public Knight(final int piecePosition, final Alliance pieceAlliance) {
     super(piecePosition, pieceAlliance);
   }
 
@@ -85,5 +85,10 @@ public class Knight extends Piece {
     }
 
     return ImmutableList.copyOf(legalMoves);
+  }
+
+  @Override
+  public String toString(){
+    return PieceType.KNIGHT.toString();
   }
 }

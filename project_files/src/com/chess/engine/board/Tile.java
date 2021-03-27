@@ -4,6 +4,7 @@ import com.chess.engine.pieces.Piece;
 import com.google.common.collect.ImmutableMap;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public abstract class Tile {
@@ -50,6 +51,12 @@ public abstract class Tile {
     public Piece getPiece() {
       return null;
     }
+
+    @Override
+    public String toString() {
+      // Empty tiles show up as a dash
+      return "-";
+    }
   }
 
   public static final class OccupiedTile extends Tile {
@@ -69,6 +76,13 @@ public abstract class Tile {
     @Override
     public Piece getPiece() {
       return pieceOnTile;
+    }
+
+    @Override
+    public String toString(){
+      //Black pieces will show up lower case, white pieces upper case
+      return this.getPiece().getAlliance().isBlack() ? this.getPiece().toString().toLowerCase() :
+              this.getPiece().toString();
     }
   }
 }

@@ -17,7 +17,7 @@ public class Rook extends Piece {
 
   private static final int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-8, -1, 1, 8};
 
-  Rook(final int piecePosition, final Alliance pieceAlliance) {
+  public Rook(final int piecePosition, final Alliance pieceAlliance) {
     super(piecePosition, pieceAlliance);
   }
 
@@ -74,5 +74,10 @@ public class Rook extends Piece {
       }
     }
     return ImmutableList.copyOf(legalMoves);
+  }
+
+  @Override
+  public String toString(){
+    return PieceType.ROOK.toString();
   }
 }

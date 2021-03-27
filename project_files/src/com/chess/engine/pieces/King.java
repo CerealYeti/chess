@@ -15,7 +15,7 @@ public class King extends Piece {
 
   private static final int[] CANDIDATE_MOVE_COORDINATE = {-9, -8, -7, -1, 1, 7, 8, 9};
 
-  King(int piecePosition, Alliance pieceAlliance) {
+  public King(final int piecePosition, final Alliance pieceAlliance) {
     super(piecePosition, pieceAlliance);
   }
 
@@ -58,13 +58,17 @@ public class King extends Piece {
                     board, this, candidateDestinationCoordinate, pieceAtDestination));
           }
         }
-      }
-
-      if (!board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
-        legalMoves.add(new Move.MajorMove(board, this, candidateDestinationCoordinate));
+        if (!board.getTile(candidateDestinationCoordinate).isTileOccupied()) {
+          legalMoves.add(new Move.MajorMove(board, this, candidateDestinationCoordinate));
+        }
       }
     }
 
     return ImmutableList.copyOf(legalMoves);
+  }
+
+  @Override
+  public String toString() {
+    return PieceType.KING.toString();
   }
 }
